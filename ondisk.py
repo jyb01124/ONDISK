@@ -72,11 +72,11 @@ cookies_bbs = {  'Intro_domain_chk':'client.ondisk.co.kr',
                  'SCkey':'OWdkMjMxNDg5N2FhZ2QyMzE0ODk3YWJnZDIzMTQ4OTdhY2dkMjMxNDg5N2FkZ2QyMzE0ODk3YTk1ZDIzMTQ4OTdhOTZkMjMxNDg5N2EyNWQyMzE0ODk3YWI1ZDIzMTQ4OTdhfGp5YjAxMTI0fDE%253D' }
 
 with requests.Session() as s:
-    #program_start = s.post('http://uploadbbs.ondisk.co.kr/main/module/bbs_uploadPrc.php', data=data_bbs, headers=headers_bbs, cookies=cookies_bbs)
-    #print(program_start.status_code)
-    #print(program_start.cookies.keys())
-    #print(program_start.text)
-    f = open("./ondisk.html", 'w')
-    f.write(str(program_start.text))
-    f.close()
-    program_start = s.post('http://C:/Users/jyb01/Desktop/ondisk.html', headers=headers_bbs, cookies=cookies_bbs)
+    program_start = s.post('http://uploadbbs.ondisk.co.kr/main/module/bbs_uploadPrc.php', data=data_bbs, headers=headers_bbs, cookies=cookies_bbs)
+    print(program_start.status_code)
+    print(program_start.cookies.keys())
+    print(program_start.text)
+    #f = open("./ondisk.html", 'w')
+    #f.write(str(program_start.text))
+    #f.close()
+    #program_start = s.post('http://C:/Users/jyb01/Desktop/ondisk.html', headers=headers_bbs, cookies=cookies_bbs)
