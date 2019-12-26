@@ -1,6 +1,5 @@
 import common
-import requests
-import zipfile, os
+import requests, zipfile, os
 from hyper.contrib import HTTP20Adapter, HTTPAdapter
 
 class hitomi:
