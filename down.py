@@ -19,7 +19,7 @@ def puzzle_jigsow(puzzle_str, puzzle_key):
         url += puzzle_key[puzzle]
     return url
 
-url = "https://www.pornhub.com/view_video.php?viewkey=ph5d2d1e2ff1e61"
+url = ""
 while True:
     url = input("주소 : ")
 
@@ -77,8 +77,10 @@ while True:
 
         secure[tmp[0]] = tmp[1]
 
+    result = {}
     for key in video_url.keys():
         url_puzzle = del_remark(str(video_url[key]))
         URL = puzzle_jigsow(url_puzzle, secure)
-
-        print(str(key) + " : " + URL)
+        result[int(str(key).replace("quality_","").replace("p",""))] = URL
+    
+    url = result[max(result.keys())]
