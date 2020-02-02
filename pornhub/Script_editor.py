@@ -6,7 +6,7 @@ class script_editor:
     recover_char = ["\\", "/"]
     extract_tag = [["div", "", "player"], ["script", "text/javascript", ""]]
     script_tag = ["<script>", "<script type=\"text/javascript\">", "</script>"]
-    deny = ["\\", "?", "*", "\"", "<", ">", "|"]
+    deny = ["\\", "?", "*", "\"", "<", ">", "|", "/", "."]
 
     def bs(self, script, tag, id="", type=""):
         return BeautifulSoup(str(script), 'html.parser').find_all(tag, id=id, type=type)[0]

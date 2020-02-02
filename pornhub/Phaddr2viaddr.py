@@ -42,7 +42,7 @@ class phaddr2viaddr:
     def title_check(self, title):
         for d in self.editor_tools.deny:
             if d in title:
-                title = title.replace(d, "")
+                title = title.replace(d, "-")
         return title
 
     def Var2DictObj(self, var_str):
@@ -95,6 +95,24 @@ class phaddr2viaddr:
             url += A[piece]
         return url
 
+    def chk_url(self, url):
+        rtn_url = ""
+        url_list = list(url.replace("https","").replace(":",""))
+        cnt = 0
+        for i in url_list:
+            if i != "/":
+                break
+            url_list[cnt] = ""
+            cnt += 1
+
+        for i in url_list:
+            rtn_url += i
+        
+        rtn_url = "https://" + rtn_url
+        
+        return rtn_url
+
+'''
 if __name__ == "__main__":
     a = phaddr2viaddr()
     HTML = a.connect("https://www.pornhub.com/view_video.php?viewkey=ph5c52110e6fba6")
@@ -104,3 +122,4 @@ if __name__ == "__main__":
     Q = a.Question(Q)
     url = a.puzzle_game(Q, A)
     print(url)
+'''

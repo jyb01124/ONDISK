@@ -1,4 +1,4 @@
-import requests, time
+import requests, time, datetime
 
 class video_download:
     header = {
@@ -25,12 +25,12 @@ class video_download:
 
     def url_confirm(self, title):
         self.file_length = int(self.R.headers["content-length"])
-        self.file_name = title + "." + str(self.R.headers["content-type"]).split("/")[1]
+        self.file_name = "./video/" + title + ".mp4"
         print("Video_download : " + str(self.file_length))
         stat = self.R.status_code
         if int(stat / 100) == 2:
             return 0
-        print("Video_download : " + str(stat))
+        print("Video_download : " + str(stat) + " " + str(datetime.datetime.now()))
         return 1
 
     def file_down(self):
